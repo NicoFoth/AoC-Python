@@ -33,11 +33,13 @@ def calculate(definition):
     elif operation[1] == "RSHIFT":
         return calculate(operation[0]) >> int(operation[2])
 
-    
 
-def partOne():
+def partTwo():
+    result = calculate("a")
+    definitions["b"] = str(result)
+    calculate.cache_clear()
     result = calculate("a")
     print(result)
 
 
-partOne()
+partTwo()
